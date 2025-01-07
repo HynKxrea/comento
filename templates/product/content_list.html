@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Small Business - Start Bootstrap Template</title>
+        <!--Favicon-->
+        <!--Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    </head>
+<body>
+    {% if content_list %}
+        {% for content in content_list %}
+            <hr/>
+            <h3><a href="/product/{{content.id}}/">{{content.title}}</a></h3>
+            <h5>{{content.content}}</h5>
+        {% endfor %}
+    {% else %}
+        <p>content가 없습니다.</p>
+    {% endif %}
+</body>
+</html>
+
+
+
+
+
